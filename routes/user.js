@@ -235,7 +235,8 @@
           var shopping = post.shopping ;
           var internet = post.internet ;
           var clubs = post.club;
-
+     var userId = req.session.userId;
+          console.log(userId);
           console.log(post);
 
           message = post ;
@@ -254,7 +255,7 @@
                     <p>you have a new contact request</p>
                     <h3>Contact Form</h3>
                     <ul>
-                      <li>Name :successss</li>
+                      <li>New form submission!</li>
                     </ul>`
           let transporter = nodemailer.createTransport({
               host: 'smtp.gmail.com'
@@ -288,7 +289,7 @@
               });
           });
           
-          res.render('contact');
+          //res.render('contact');
 
               //res.render('contact');
               //res.render('editPage' , message);
