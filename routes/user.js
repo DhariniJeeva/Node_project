@@ -283,7 +283,6 @@
                   return console.log(error);
               }
               console.log('Message sent: %s', info.messageId);
-              console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
               res.render('contact', {
                   message: 'Email has been sent!'
               });
