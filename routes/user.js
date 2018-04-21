@@ -235,8 +235,8 @@
           var shopping = post.shopping ;
           var internet = post.internet ;
           var clubs = post.club;
-     var userId = req.session.userId;
-          console.log(userId);
+          var userId = req.session.user;
+          console.log("sdfsd", userId);
           console.log(post);
 
           message = post ;
