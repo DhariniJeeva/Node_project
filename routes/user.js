@@ -250,12 +250,7 @@
                           id = result.insertId ;
                         var success = "Succesfully! data added";
                         });
-
-              //res.render('contact');
-              //res.render('editPage' , message);
-
-      }
-                    const output = `
+              const output = `
                     <p>you have a new contact request</p>
                     <h3>Contact Form</h3>
                     <ul>
@@ -294,6 +289,12 @@
           });
           
           res.render('contact');
+
+              //res.render('contact');
+              //res.render('editPage' , message);
+
+      }
+                    
 
   //        var tableToCsv = require('node-table-to-csv');
   //
