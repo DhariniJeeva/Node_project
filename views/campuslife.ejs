@@ -1,0 +1,286 @@
+    <%include header%>
+
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <script src="/js/campuslife.js"></script>
+        <script>
+       
+        </script>
+    </head>
+    <body>
+  <h3 class="text-center">Approved Submissions</h3>
+    <div class="container row text-center" style="margin:0 auto"> 
+          <button class="btn btn-info toggle-buttons" id="essentialthings-btn">User Data using this app</button>
+          <div id="essentialthings" style="display: none">
+              
+              
+              <table class="table-bordered">
+                  <tr>
+                      <th class="col-md-2">Campus</th>
+                      <th class="col-md-2">Choice of Accomodation</th>
+                      <th class="col-md-2">shopping suggestions</th>
+                      <th class="col-md-2">internet & mobile plans</th>
+                      <th class="col-md-2">Student Organisation & clubs</th>
+                  </tr>
+              <% for(var i=0; i < message.length; i++) { %>
+                     <tr>
+                        <td class="col-md-4"> <%= message[i]["campus"] %></td>
+                        <td class="col-md-4"> <%= message[i]["accomodation"] %></td>
+                        <td class="col-md-4"> <%= message[i]["shopping"] %></td>
+                        <td class="col-md-4"> <%= message[i]["internet"] %></td>
+                        <td class="col-md-4"> <%= message[i]["club"] %></td> 
+
+                     </tr>
+                  <% } %>
+              </table>
+        </div>
+
+
+     
+
+
+        <button class="btn btn-info toggle-buttons" id="otherthings-btn">Data from Survey and research</button>
+          <div id="otherthings" style="display: none">
+
+        <h3 class="text-center">On and Off Campus life</h3>
+        <nav class="navbar navbar-inverse">
+      <ul class="nav navbar-nav topbar">
+        <li id="rit_us"><a href="#">RIT US</a></li>
+        <li id="rit_croatia"><a href="#">RIT Crotia</a></li>
+        <li id="rit_dubai"><a href="#">RIT Dubai</a></li>
+      </ul>
+    </nav>
+
+                  <div class="us_campus" style="display: none">
+          <ul>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Meet Students/ Faculties</li>
+            <div class="details" style="display: none">
+            <li><a href="http://www.rit.edu/facultystaff.html">Faculty List</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Accomodation</li>
+            <div class="details" style="display: none">
+            <li><a href="https://www.rit.edu/fa/housing/" target="_blank">On Campus Housing</a></li>
+            <li><a href="http://www.rusticvillageapartments.com/RochesterRegion/RusticVillage.aspx" target="_blank">Off Campus Housing- Rustic Village</a></li>
+            <li><a href="http://www.collegetownrochester.com/live-at-mt-hope-lofts/" target="_blank">Off Campus Housing - Mount Hope Housing</a></li>
+            <li><a href="http://www.westbrookecommons.com/" target="_blank">Off Campus Housing- WestBrooke Commons</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Getting involved</li>
+            <div class="details" style="display: none">
+            <li><a href="http://www.rit.edu/emcs/admissions/bca/blog/item/getting-involved-at-rit">Visit to learn more</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Go Tigers</li>
+            <div class="details" style="display: none">
+            <li><a href="http://www.ritathletics.com/">Check out RIT Sports</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Student Groups</li>
+            <div class="details" style="display: none">
+            <li><a href="https://www.rit.edu/studentaffairs/studenthandbook/clubs-student-organizations">Clubs & Organisations</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; University Libraries</li>
+            <div class="details" style="display: none">
+            <li><a href="https://library.rit.edu/">RIT libraries</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Grocery and Shopping</li>
+            <div class="details" style="display: none">
+            <li>Wegmans</li>
+            <li>The Marketplace Mall</li>
+            <li>Walmart</li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; ATMs on Campus</li>
+            <div class="details" style="display: none">
+            <li><a href="https://www.rit.edu/fa/sfs/campus-atms">List of ATMs on campus</a></li>
+            <br/>
+            <li>Bank of America</li>
+            <li>M&T</li>
+            <li>Advantage Federal Credit Union</li>
+            <li>First Niagara</li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Phone and internet plans </li>
+              <div class="details" style="display: none">
+                <li>
+                  <a href="https://www.att.com/" target="_blank">AT&T</a>
+                </li>
+                <li>
+                  <a href="https://www.bestbuy.com/" target="_blank">best deal through Bestbuy</a>
+                </li>
+                <li>
+                  <a href="https://www.verizonwireless.com/" target="_blank">Verizon</a>
+                </li>
+              </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Banks near me</li>
+            <div class="details" style="display: none">
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Bank_of_America" target="_blank">Bank of America</a>
+              </li>
+              <li><a href="https://en.wikipedia.org/wiki/Chase_Bank" target="_blank">Chase Bank</a>
+              </li>
+              <li><a href="https://rocwiki.org/Canandaigua_National_Bank_%26_Trust" target="_blank">Canandaigua National Bank & Trust</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/M%26T_Bank" target="_blank">M&T Bank</a></li>
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Places of worship</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; City Life</li>
+            <div class="details" style="display: none">
+            </div>
+          </ul>
+        </div>
+        <div class="croatia_campus" style="display: none">
+          <ul>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Meet Students/ Faculties</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Accomodation</li>
+            <div class="details" style="display: none">
+              <li><a href="https://www.longtermlettings.com/find/rentals/Croatia/Dubrovnik-Neretva/" target="_blank">Off campus accomadation </a></li>
+              <li><a href = "http://www.croatia.rit.edu/housing/" target="_blank">On Campus Accomodation </a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Getting involved</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Go Tigers</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Student Groups</li>
+            <div class="details" style="display: none">
+            <li><a href="http://www.croatia.rit.edu/student-clubs-and-organizations/">Clubs and Organisations</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; University Libraries</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Grocery and Shopping</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; ATMs on Campus</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Phone and internet plans </li>
+              <div class="details" style="display: none">
+
+              </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Banks near me</li>
+            <div class="details" style="display: none">
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Zagreba%C4%8Dka_banka" target="_blank">Zagrebacka Banka</a>
+              </li>
+              <li><a href="https://en.wikipedia.org/wiki/Hrvatska_po%C5%A1tanska_banka" target="_blank">Hrvatska postanska banka</a>
+              </li>
+              <li><a href="https://en.wikipedia.org/wiki/Addiko_Bank" target="_blank">Addiko Bank</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Places of worship</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; City Life</li>
+            <div class="details" style="display: none">
+            </div>
+          </ul>
+        </div>
+        <div class="dubai_campus" style="display: none">
+          <ul>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Meet Students/ Faculties</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Accomodation</li>
+            <div class="details" style="display: none">
+              <li><a href="https://www.rit.edu/dubai/student-life/housing-operations" target="_blank">On Campus Accomodation</a></li>
+              <li><a href="https://www.propertyfinder.ae/en/rent/properties-for-rent.html" target="_blank">Off Campus Accomodation</a></li>
+              <li><a href="https://dubai.dubizzle.com/property-for-rent/home/" target="_blank">Off Campus Accomodation</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Getting involved</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Go Tigers</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Student Groups</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; University Libraries</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Grocery and Shopping</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; ATMs on Campus</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Phone and internet plans </li>
+              <div class="details" style="display: none">
+
+              </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Banks near me</li>
+            <div class="details" style="display: none">
+              <li><a href="https://en.wikipedia.org/wiki/Dubai_Islamic_Bank" target="_blank">dubai islamic bank</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Emirates_NBD" target="_blank">Emirates NBD Bank</a></li>
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; Places of worship</li>
+            <div class="details" style="display: none">
+
+            </div>
+            <li class="liclass">
+              <i class="fa fa-hand-o-right" aria-hidden="true" style="color: #4B0082"></i>&nbsp; City Life</li>
+            <div class="details" style="display: none">
+
+            </div>
+          </ul>
+        </div>
+        </div>
+
+
+        </div>
+
+      </body>
+      </html>
+      <%include footer%>

@@ -1,0 +1,61 @@
+<%include header%>
+<html>
+<head>
+  <script>
+  $(function(){
+    if(localStorage.getItem("checked_values")){
+      var storedValue = localStorage.getItem("checked_values");
+      storedValue = storedValue.split(",");
+      console.log(storedValue.length);
+
+      for(var i=0; i<storedValue.length; i++){
+        console.log($("#"+storedValue[i]).attr('checked','checked'));
+      }
+    }
+  })
+
+  function save() {
+    var values = [];
+    $("input[type=checkbox]:checked").each(function(){
+      values.push($(this).attr("id"));
+    });
+    console.log(values.join());
+
+    localStorage.setItem("checked_values", values);
+    var storedValue = localStorage.getItem("checked_values");
+
+    $("#"+storedValue).prop('checked','true');
+
+  }
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h3 class="text-center jumbotron">Pre-Arrival list</h3>
+    <input type="checkbox" id="list1" />
+    <label for="list1">Accept your offer</label><br/>
+    <input type="checkbox" id="list2" />
+    <label for="list2">Apply for permit and visa</label><br/>
+    <input type="checkbox" id="list3" />
+    <label for="list3">Other important documents</label><br/>
+    <input type="checkbox" id="list4" />
+    <label for="list4">Know your health insurance</label><br/>
+    <input type="checkbox" id="list5" />
+    <label for="list5">Arrange accomodation</label><br/>
+    <input type="checkbox" id="list6" />
+    <label for="list6">Prepare for Orientation</label><br/>
+    <input type="checkbox" id="list7" />
+    <label for="list7">Learn about local currency</label><br/>
+    <input type="checkbox" id="list8" />
+    <label for="list8">Personal Items</label><br/>
+    <input type="checkbox" id="list9" />
+    <label for="list9">Identify our travel options</label><br/>
+    <button class="btn waves-effect waves-light" onclick="save()" value="OK">Save
+    </button>
+  </div>
+
+</body>
+</html>
+
+<%include footer%>

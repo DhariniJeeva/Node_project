@@ -1,0 +1,68 @@
+<%include header%>
+<html>
+<head>
+  <script>
+  $(function(){
+    if(localStorage.getItem("checked_list_values")){
+      var storedListVal = localStorage.getItem("checked_list_values");
+      storedListVal = storedListVal.split(",");
+      console.log(storedListVal.length);
+
+      for(var i=0; i<storedListVal.length; i++){
+        console.log($("#"+storedListVal[i]).attr('checked','checked'));
+      }
+    }
+  })
+
+  function save() {
+    var values = [];
+    $("input[type=checkbox]:checked").each(function(){
+      values.push($(this).attr("id"));
+    });
+    console.log(values.join());
+
+    localStorage.setItem("checked_list_values", values);
+    var storedListVal = localStorage.getItem("checked_list_values");
+
+    $("#"+storedListVal).prop('checked','true');
+
+  }
+
+</script>
+</head>
+<body>
+
+
+
+
+  <div class="container">
+    <h3 class="text-center jumbotron">Post-arrival List</h3>
+
+    <input type="checkbox" id="test1" />
+    <label for="test1">Port of Entry</label><br/>
+    <input type="checkbox" id="test2" />
+    <label for="test2">Study the Permit</label><br/>
+    <input type="checkbox" id="test3" />
+    <label for="test3">Emergency contact details</label><br/>
+    <input type="checkbox" id="test4" />
+    <label for="test4">Identity Card</label><br/>
+    <input type="checkbox" id="test5" />
+    <label for="test5">Open Bank Account</label><br/>
+    <input type="checkbox" id="test6" />
+    <label for="test6">Connect with your campus</label><br/>
+    <input type="checkbox" id="test7" />
+    <label for="test7">Explore the city</label><br/>
+    <input type="checkbox" id="test8" />
+    <label for="test8">Personal Items</label><br/>
+    <input type="checkbox" id="test9" />
+    <label for="test9">Begin the program</label><br/>
+
+
+    <button class="btn waves-effect waves-light" onclick="save()" value="OK">Save
+    </button>
+  </div>
+
+</body>
+</html>
+
+<%include footer%>

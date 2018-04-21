@@ -1,0 +1,43 @@
+<%include header%>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="container">
+    <form method="POST" action="/uploadfiles" encType="multipart/form-data">
+      <div class="input-group file-upload">
+        <h3>Upload files to the system!</h3>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile04" accept=".csv" name="file">
+        </div>
+        <div class="input-group-append">
+          <button type="submit">      <i class="fa fa-upload fa-3x" style="color: #26a69a"></i>
+          </button>
+        </div>
+      </div>
+
+  <% if (message.length > 0) { %>
+      <div id="data-shows">
+          <h4>Data from the uploaded file!</h4>
+          <table class="table">
+                  <% for(var i=0; i < message.length; i++) { %>
+                     <tr>
+                       <td> <%= message[i][0] %></td>
+                       <td> <%= message[i][1] %></td>
+                       <td> <%= message[i][2] %></td>
+                       <td> <%= message[i][3] %></td>
+                       <td> <%= message[i][4] %></td>
+                     </tr>
+                  <% } %>
+          </table>
+    <% } %>
+
+
+      </div>
+
+    </form>
+
+  </div>
+</body>
+</html>
+<%include footer%>

@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RIT International helper!</title>
+  <link rel='stylesheet' type="text/css" href='/stylesheets/styles.css'>
+  <link rel="shortcut icon" type="image/jpeg" href="/assets/images/favicon.jpeg" sizes="16x16">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  <link rel="shortcut icon" type="image/jpeg" href="/assets/images/favicon.jpeg" sizes="16x16">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body id="clrblk">
+  <div class="text-center">
+  <h4>Welcome to RIT International Stay Helper</h4><hr style="width: 50%"/>
+</div>
+  <div class="container">
+    <div class="col-sm-12">
+      <div class="card horizontal">
+        <div class="card-image" style="background-color: #A0522D; color : white; padding: 40px;">
+          <img src="/assets/images/rit_tiger.png" style="border-radius:100%">
+          <p class="info">
+            <i class="fa fa-calendar" aria-hidden="true">&nbsp; See RIT events - US, Croatia and Dubai</i>
+            <i class="fa fa-university" aria-hidden="true">&nbsp; Learn about offcampus activties</i>
+            <i class="fa fa-heartbeat" aria-hidden="true">&nbsp;  Find more about where to shop, bank, health and wellness and a lot more.</i>
+          </p>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <% if (message.length > 0) { %>
+              <div class="alert alert-danger col-sm-12"><%= message %></div>
+              <% } %>
+              <form id="loginform" class="form-horizontal" role="form" method="post" action="/login">
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user fa-2x"></i></span>
+                  <input id="login-username" type="text" class="form-control" name="user_name" value="" placeholder="username">
+                </div>
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock fa-2x"></i></span>
+                  <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <div class="input-group">
+            </div>
+            <div style="margin-top:10px" class="form-group">
+              <div class="col-sm-12 controls">
+                <button id="btn-login" type="submit" class="btn btn-success" style="width: 100%;background-color: #3f51b5; color: white">Login  </button>
+              </div>
+            </div>
+            <script>
+
+            $(function(){
+              $("#btn-login").on("click" , function(){
+                var a = $("#login-username").val();
+                  console.log(a);
+                  if(a){
+                    var store = localStorage.setItem("admin", a);
+                    console.log(store);
+                  }
+              })
+
+            })
+
+            </script>
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-weight: bold; font-size:105%; text-align: center" >
+                <br/>
+                  Don't have an account?
+                  <a href="/signup" style="color: #00bcd4;">
+                    Sign Up Here
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
