@@ -259,7 +259,7 @@
                     <p>you have a new contact request</p>
                     <h3>Contact Form</h3>
                     <ul>
-                      <li>Name :` + req.body + `</li>
+                      <li>Name :successss</li>
                     </ul>`
           let transporter = nodemailer.createTransport({
               host: 'smtp.gmail.com'
