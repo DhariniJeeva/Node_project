@@ -185,7 +185,7 @@
 
       message = '' ;
        if(req.method == "GET"){
-        var sql = "SELECT * FROM `user_form_data` where id= (select max(id) from user_form_data) ";
+        var sql = "SELECT * FROM `user_form_data` where id= (select max(id) from user_form_data) and not status= '2' ";
           console.log(sql);
           db.query(sql, function (err, result) {
               if (result.length) {
