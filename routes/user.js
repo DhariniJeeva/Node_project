@@ -68,9 +68,12 @@
   };
   //------------------------------------logout functionality----------------------------------------------
   exports.logout = function (req, res) {
-      req.session.destroy(function (err) {
-          res.redirect("/login");
-      })
+      // req.session.destroy(function (err) {
+      //     res.redirect("/login");
+      // })
+
+      req.session = null;
+      res.redirect("/login");
   };
   //--------------------------------render user details after login--------------------------------
   exports.profile = function (req, res) {
@@ -287,14 +290,14 @@
                   message: 'Email has been sent!'
               });
           });
-          
+
           //res.render('contact');
 
               //res.render('contact');
               //res.render('editPage' , message);
 
       }
-                    
+
 
   //        var tableToCsv = require('node-table-to-csv');
   //
