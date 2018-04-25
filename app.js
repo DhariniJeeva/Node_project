@@ -1,6 +1,7 @@
 /**
 * Module dependencies.
 */
+var cookieSession = require('cookie-session')
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
@@ -52,12 +53,22 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(session({
-              secret: 'keyboard cat',
-              resave: false,
-              saveUninitialized: true,
-              cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 }
-            }))
+// app.use(session({
+//               secret: 'keyboard cat',
+//               resave: false,
+//               saveUninitialized: true,
+//               cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 }
+//             }))
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+
 app.use(fileUpload());
 
 app.get('/', routes.index);//call for main index page
