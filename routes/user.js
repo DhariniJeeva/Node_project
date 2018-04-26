@@ -208,7 +208,7 @@
               console.log(sql);
               var query = db.query(sql, function (err, result) {
                 message ="approved" ;
-                      res.render('editPage', message);
+                      res.render('editPage');
                    //res.redirect('/home/dashboard/campuslife');
                         });
           }
