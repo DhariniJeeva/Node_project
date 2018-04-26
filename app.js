@@ -17,6 +17,7 @@ var app = express();
 const fileUpload = require('express-fileupload');
 //app.use(express.bodyParser());
 var mysql  = require('mysql');
+var pool  = mysql.createPool(...);
 var store = require('store');
 
 // Load the bcrypt module
@@ -50,7 +51,18 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 global.db = connection;
+pool.getConnection(function(err, connection) {
+  // Use the connection
+  connection.query('SELECT something FROM sometable', function (error, results, fields) {
+    // And done with the connection.
+    connection.release();
 
+    // Handle error after the release.
+    if (error) throw error;
+
+    // Don't use the connection here, it has been returned to the pool.
+  });
+});
 // all environments
 //app.set('port', process.env.PORT);
 //app.use(express.static(__dirname + '/public'));
