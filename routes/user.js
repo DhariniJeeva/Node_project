@@ -193,7 +193,7 @@
           db.query(sql, function (err, result) {
               if (result.length) {
                   message =result;
-                  res.render('editPage', message);
+                  //res.render('editPage', message);
               }
               else{
                   message = '';
