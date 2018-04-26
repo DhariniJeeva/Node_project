@@ -41,7 +41,6 @@ var store = require('store');
 //});
 // connection.connect();
 //
-// global.db = connection;
 connection.connect(function(err) {
   if (err) {
     console.error('error connecting: ' + err.stack);
@@ -50,6 +49,8 @@ connection.connect(function(err) {
 
   console.log('connected as id ' + connection.threadId);
 });
+global.db = connection;
+
 // all environments
 //app.set('port', process.env.PORT);
 //app.use(express.static(__dirname + '/public'));
