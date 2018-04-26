@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@ionic/app-scripts": "^3.1.9",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "client-sessions": "^0.8.0",
@@ -34,7 +35,5 @@
     "sendmail": "^1.2.0",
     "store": "^2.0.12"
   },
-  "devDependencies": {
-    "ws": "3.3.2"
-  }
+  "devDependencies": {}
 }
