@@ -39,10 +39,17 @@ var store = require('store');
 //                password : 'root',
 //                database : 'mydb123'
 //});
-connection.connect();
+// connection.connect();
+//
+// global.db = connection;
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
 
-global.db = connection;
-
+  console.log('connected as id ' + connection.threadId);
+});
 // all environments
 //app.set('port', process.env.PORT);
 //app.use(express.static(__dirname + '/public'));
