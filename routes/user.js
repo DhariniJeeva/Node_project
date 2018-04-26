@@ -193,7 +193,7 @@
           db.query(sql, function (err, result) {
               if (result.length) {
                   message =result;
-                  //res.render('editPage', message);
+                  res.render('editPage', message);
               }
               else{
                   message = '';
@@ -208,8 +208,7 @@
               console.log(sql);
               var query = db.query(sql, function (err, result) {
                       // res.render('contact');
-                  console.log(result);
-                   res.redirect('/home/dashboard/campuslife');
+                   //res.redirect('/home/dashboard/campuslife');
                         });
           }
           else{
