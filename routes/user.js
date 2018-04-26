@@ -207,9 +207,8 @@
               var sql = "UPDATE `user_form_data` SET `campus`="+a.select+", `accomodation`='"+a.accomodation+"' , `shopping`='"+a.shopping+"', `internet`='"+a.internet+"', `club`='"+a.club+"', `status` = '2' WHERE `user_form_data`.`id` =" +a.hidden_field ;
               console.log(sql);
               var query = db.query(sql, function (err, result) {
-                message ="approved" ;
-                      res.render('editPage');
-                   //res.redirect('/home/dashboard/campuslife');
+                      //res.render('editPage');
+                   res.redirect('/home/dashboard/campuslife');
                         });
           }
           else{
