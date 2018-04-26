@@ -188,7 +188,7 @@
 
       message = '' ;
        if(req.method == "GET"){
-        var sql = "SELECT * FROM `user_form_data` where status= '1' ";
+        var sql = "SELECT * FROM `user_form_data` where status= '2' ";
           console.log(sql);
           db.query(sql, function (err, result) {
               if (result.length) {
