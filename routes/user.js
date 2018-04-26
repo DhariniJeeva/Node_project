@@ -245,8 +245,8 @@
                         ;
 
                         var query = db.query(sql, function (err, result) {
-                        console.log(result.insertId);
-                          id = result.insertId ;
+                        //console.log(result.insertId);
+                          //id = result.insertId ;
                         var success = "Succesfully! data added";
                         });
               const output = `
