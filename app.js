@@ -26,10 +26,10 @@ var store = require('store');
 
 
  var connection = mysql.createConnection({
-               host     : 'us-cdbr-iron-east-05.cleardb.net',
-               user     : 'b320cc1ae3b491',
-               password : '54a71929',
-               database : 'heroku_de7fc22e5a8a029'
+               host     : '*****',
+               user     : '****',
+               password : '***',
+               database : '*****'
              });
 //
 //var connection = mysql.createConnection({
