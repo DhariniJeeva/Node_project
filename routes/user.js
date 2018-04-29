@@ -68,12 +68,9 @@
   };
   //------------------------------------logout functionality----------------------------------------------
   exports.logout = function (req, res) {
-      // req.session.destroy(function (err) {
-      //     res.redirect("/login");
-      // })
-
-      req.session = null;
-      res.redirect("/login");
+      req.session.destroy(function (err) {
+          res.redirect("/login");
+      })
   };
   //--------------------------------render user details after login--------------------------------
   exports.profile = function (req, res) {
@@ -188,12 +185,16 @@
 
       message = '' ;
        if(req.method == "GET"){
-        var sql = "SELECT *  FROM `user_form_data` where status= '1' limit 5";
+        var sql = "SELECT * FROM `user_form_data` where id= (select max(id) from user_form_data) and not status= '2' ";
           console.log(sql);
           db.query(sql, function (err, result) {
               if (result.length) {
+
                   message =result;
+                  console.log(message);
+
                   res.render('editPage', message);
+
               }
               else{
                   message = '';
@@ -207,7 +208,8 @@
               var sql = "UPDATE `user_form_data` SET `campus`="+a.select+", `accomodation`='"+a.accomodation+"' , `shopping`='"+a.shopping+"', `internet`='"+a.internet+"', `club`='"+a.club+"', `status` = '2' WHERE `user_form_data`.`id` =" +a.hidden_field ;
               console.log(sql);
               var query = db.query(sql, function (err, result) {
-                      //res.render('editPage');
+                      // res.render('contact');
+                  console.log(result);
                    res.redirect('/home/dashboard/campuslife');
                         });
           }
@@ -260,8 +262,8 @@
               , port: 587
               , secure: false, // true for 465, false for other ports
               auth: {
-                  user: 'ritinternationalhelper@gmail.com',
-                  pass: 'boombox123'
+                  user: 'ritinternationalhelper@gmail.com', // generated ethereal user
+                  pass: 'boombox123' // generated ethereal password
               }
               , tls: {
                   rejectUnauthorized: false
@@ -285,14 +287,14 @@
                   message: 'Email has been sent!'
               });
           });
-
+          
           //res.render('contact');
 
               //res.render('contact');
               //res.render('editPage' , message);
 
       }
-
+                    
 
   //        var tableToCsv = require('node-table-to-csv');
   //
