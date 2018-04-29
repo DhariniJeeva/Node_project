@@ -262,8 +262,8 @@
               , port: 587
               , secure: false, // true for 465, false for other ports
               auth: {
-                  user: 'ritinternationalhelper@gmail.com', // generated ethereal user
-                  pass: 'boombox123' // generated ethereal password
+                  user: '***@gmail.com', // generated ethereal user
+                  pass: '****' // generated ethereal password
               }
               , tls: {
                   rejectUnauthorized: false
@@ -272,7 +272,7 @@
           // setup email data with unicode symbols
           let mailOptions = {
               from: req.body.email, // sender address
-              to: "ritinternationalhelper@gmail.com", // list of receivers
+              to: "****@gmail.com", // list of receivers
               subject: 'Node Contact Request', // Subject line
               text: 'Hello world?', // plain text body
               html: output // html body
